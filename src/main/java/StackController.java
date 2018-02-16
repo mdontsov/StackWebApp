@@ -1,13 +1,20 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.Random;
 import java.util.Stack;
 
-public class StackDemo {
+@SpringBootApplication
+public class StackController {
 
     static Stack<Integer> stack = new Stack<Integer>();
+    static Random random = new Random();
 
-    static void doPush(int... values) {
-        for (int i : values) {
-            stack.push(i);
+    static void doPush() {
+        for (int i = 0; i < 10; i++) {
+            int j = random.nextInt(100);
+            stack.push(j);
         }
+        System.out.println(stack);
     }
 
     static void doPop() {
@@ -18,8 +25,9 @@ public class StackDemo {
     static void doReset() {
         stack.clear();
         if (stack.isEmpty()) {
-            System.out.print("Stack is cleared");
+            System.out.println("Stack is cleared");
         }
+        System.out.println(stack);
     }
 
     static void doView() {
@@ -31,7 +39,7 @@ public class StackDemo {
     }
 
     public static void main(String[] args) {
-        doPush(5, 9, 11);
+        doPush();
         doPop();
         doView();
         doReset();
