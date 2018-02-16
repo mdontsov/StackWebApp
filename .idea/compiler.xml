@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="StackWebApp" target="1.5" />
+      <module name="StackWebApp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
